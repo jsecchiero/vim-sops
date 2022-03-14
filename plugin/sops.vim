@@ -9,7 +9,7 @@ let g:loaded_sops = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-let g:sops_files_match = "sops-*,*.sops,*secret*"
+let g:sops_files_match = "{sops-*,*.sops,*secret*}"
 let g:sops_messages = []
 let g:sops_decrypted_pid = {}
 let g:sops_previous_line = {}
