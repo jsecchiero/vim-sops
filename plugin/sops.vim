@@ -72,6 +72,10 @@ function s:decrypt(filepath)
 
   " delete current buffer since will be opened a new one
   if bufexists(a:filepath) > 0
+    " switch to previous buffer before deleting it
+    " this helps to preserve the current window number and position
+    exe "bp"
+    " delete the current buffer since a new one will be opened
     exe "bw " . a:filepath
   endif
 endfunction
@@ -114,6 +118,9 @@ function s:update(filepath)
   " close the client
   " TODO: what in case of more clients?
   call server2client(expand("<client>"), '<Esc>:q!<CR>')
+  " switch to previous buffer before deleting it
+  " this helps to preserve the current window number and position
+  exe "bp"
   " delete the current buffer since a new one will be opened
   exe "bw " a:filepath
 
