@@ -24,3 +24,11 @@ sops files can vary in extension and filename, the default file are `"sops-*,*.s
 ```
 let g:sops_files_match = "sops-*,*.sops,*secret*"
 ```
+
+## tips
+
+you can specify a env at runtime in vim with:  
+
+```
+let $AWS_PROFILE="admin-prod"
+```
