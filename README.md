@@ -4,6 +4,10 @@ Vim plugin for encrypt/decrypt sops files on the fly without leaving your vi ses
 
 _warning_ plaintext file is written temporary on the disk
 
+## prerequisite
+
+require `+clientserver` in your vim (check it with `vi --version`)
+
 ## install
 
 ```
