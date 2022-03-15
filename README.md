@@ -22,10 +22,10 @@ git clone https://github.com/jsecchiero/vim-sops.git ~/.vim/pack/plugins/start/v
 
 ## configure
 
-sops files can vary in extension and filename, the default file are `"sops-*,*.sops,*secret*"`  
+sops files can vary in extension and filename, the default file are `"{sops-*,*.sops,*secret*}"`  
 
 ```
-let g:sops_files_match = "sops-*,*.sops,*secret*"
+let g:sops_files_match = "{sops-*,*.sops,*secret*}"
 ```
 
 ## tips

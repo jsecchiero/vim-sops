@@ -1,0 +1,28 @@
+*sops*                          VIM sops for managing sops encrypted files
+------------------------------------------------------------------------------
+                                 VIM ProSession
+
+                   Manage sops encrypted files. Version 0.0.1
+
+              Repo: https://github.com/jsecchiero/vim-sops
+                 Author: Jacopo Secchiero
+               License: Same terms as Vim itself (see |license|)
+
+------------------------------------------------------------------------------
+REQUIREMENTS                                           *sops-requirements*
+
+VIM sops require +clientserver
+
+------------------------------------------------------------------------------
+OPTIONS                                                     *sops-options*
+
+                                                             *sops-loaded*
+g:loaded_sops   Use this option to disable the plugin. Default: >
+                        let g:loaded_sops = 1
+<
+
+                                                             *g:sops_filematch*
+g:sops_filematch   Use this option to choose which extension are used from sops.
+                   Default: >
+                        let g:sops_filematch = "{sops-*,*.sops,*secret*}"
+<
