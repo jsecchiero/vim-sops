@@ -12,7 +12,15 @@ set cpo&vim
 let g:sops_files_match = "{sops-*,*.sops,*secret*}"
 let g:sops_messages = []
 let g:sops_decrypted_pid = {}
+let g:sops_decrypted_source = {}
 let g:sops_previous_line = {}
+
+function SopsSource()
+  let current_file = @%
+  if (has_key(g:sops_decrypted_source, current_file) == 1)
+    echom g:sops_decrypted_source[current_file]
+  endif
+endfunction
 
 function s:decrypt(filepath)
   " try to decrypt the file
@@ -27,6 +35,7 @@ function s:decrypt(filepath)
 
     " recover line if file was previously closed
     let sops_original_file = s:get_sops_source_file(a:filepath)
+    let g:sops_decrypted_source[a:filepath] = sops_original_file
     if (has_key(g:sops_previous_line, sops_original_file) == 1)
       call add(g:sops_messages, a:filepath . " restore line to " .
              \ g:sops_previous_line[sops_original_file])
@@ -141,6 +150,8 @@ augroup Sops
     \ "call s:update(resolve(expand(\"<afile>\")))"
 
 augroup END
+
+command SopsSource call SopsSource()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

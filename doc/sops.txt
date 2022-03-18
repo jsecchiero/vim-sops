@@ -17,12 +17,19 @@ VIM sops require +clientserver
 OPTIONS                                                     *sops-options*
 
                                                              *sops-loaded*
-g:loaded_sops   Use this option to disable the plugin. Default: >
-                        let g:loaded_sops = 1
+g:loaded_sops           Use this option to disable the plugin.
+                        Default: >
+                                 let g:loaded_sops = 1
 <
 
                                                              *g:sops_filematch*
-g:sops_filematch   Use this option to choose which extension are used from sops.
-                   Default: >
-                        let g:sops_filematch = "{sops-*,*.sops,*secret*}"
+g:sops_filematch        Use this option to choose which extension are used
+                        from sops.
+                        Default: >
+                                 let g:sops_filematch = "{sops-*,*.sops,*secret*}"
 <
+
+COMMANDS                                        *sops-commands*
+
+                                                *:SopsSource*
+:SopsSource [args]      Shows the encrypted source file path
