@@ -72,7 +72,7 @@ function s:decrypt(filepath)
 
   " sops will use current vim server as a editor
   " print pid
-  let cmd_open = 'EDITOR=''vi --servername ' . v:servername    .
+  let cmd_open = 'EDITOR=' . v:progname . ''' --servername ' . v:servername .
                \ ' --remote-wait'' sops ' . a:filepath . ' & ' .
                \ ' echo -n $!'
   let cmd_open_pid = system(cmd_open)
